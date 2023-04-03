@@ -1,24 +1,32 @@
-import {Link} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React from 'react';
+import { Grid, GridItem, Image } from "@chakra-ui/react";
 
 
 const TeamsList = ({teams}) => {
-    const teamsList = teams.map(team => {
-        return <tr key={team.id}>
-            <td style={{whiteSpace: 'nowrap', textTransform: 'capitalize'}}>
-                <Link to={"/teams/" + team.id}>{team.prefix} {team.name}</Link>
-            </td>
-        </tr>
-    })
+    const teamsList = teams.map((team) => {
+        return (
+          <GridItem key={team.id}>
+            <NavLink to={"/teams/" + team.id}>
+              <Image
+                src={`/teams/${team.name.toLowerCase()}/${team.name.toLowerCase()}_logo.png`}
+                mx="auto"
+                mt="2"
+                mb="4"
+                w="60%"
+                h="60%"
+                objectFit="contain"
+              />
+            </NavLink>
+          </GridItem>
+        );
+      });
+
     return (
-        <>
-            <table>
-                <tbody>
-                    {teamsList}
-                </tbody>
-            </table>
-        </>
-    );
+        <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+          {teamsList}
+        </Grid>
+      );
 };
 
 export default TeamsList;
