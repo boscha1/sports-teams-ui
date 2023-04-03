@@ -6,11 +6,15 @@ import {
   IconButton,
   useDisclosure,
   Stack,
-  Icon,
   Link,
-  Image
+  Image,
+  VStack,
+  List,
+  ListItem,
+  ListIcon
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -45,22 +49,51 @@ const Navbar = () => {
           direction="row"
           display={{ base: "none", md: "flex" }}
         >
-          <Link href="/teams">Teams</Link>
-          <Link href="/schedule">Schedule</Link>
-          <Link href="/standings">Standings</Link>
-          <Link href="/news">News</Link>
+          <NavLink to="teams">Teams</NavLink>
+          <NavLink to="teams">Schedule</NavLink>
+          <NavLink to="teams">Standings</NavLink>
+          <NavLink to="teams">News</NavLink>
         </Stack>
       </Flex>
 
       {isOpen ? (
-        <Box pb={4} display={{ md: "none" }}>
-          <Stack as={"nav"} spacing={4}>
-            <Link href="/teams">Teams</Link>
-            <Link href="/schedule">Schedule</Link>
-            <Link href="/standings">Standings</Link>
-            <Link href="/news">News</Link>
-          </Stack>
-        </Box>
+        <VStack
+          bg="gray.800"
+          color="white"
+          position="fixed"
+          top="60px"
+          left="20px"
+          zIndex={1}
+          p={4}
+          spacing={4}
+          align="flex-start"
+          justify="center"
+          direction="column"
+          display={{ md: "none" }}
+        >
+          <List color="white" fontSize="1.2em" spacing={4}>
+            <ListItem>
+              <NavLink to="teams">
+                Teams
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              <NavLink to="schedule">
+                Schedule
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              <NavLink to="standings">
+                Standings
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              <NavLink to="news">
+                News
+              </NavLink>
+            </ListItem>
+          </List>
+        </VStack>
       ) : null}
     </Box>
   );
