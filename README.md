@@ -11,7 +11,7 @@ To run this application locally using node, you will need the following node ver
 3. Start the development server using ```npm start```
 4. Open ```http://localhost:3000``` to view the app in the browser
 
-### Install and run using docker
+### Install and run using docker:
 
 1. Change into the project directory using ```cd nfl-react-app```
 2. Build using docker: ```docker build -t sports-ui . ```
