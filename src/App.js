@@ -15,8 +15,9 @@ import TeamsPage from './pages/TeamsPage'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<TeamsPage />}/>
+      <Route index element={<Home />}/>
       <Route path="/teams/:id" element={<TeamPage/>}/>
+      <Route path="/teams/" element={<TeamsPage/>}/>
     </Route>
   )
 )

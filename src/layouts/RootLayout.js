@@ -1,12 +1,14 @@
-import { Container, Grid, GridItem } from "@chakra-ui/react"
+import { Container, Box } from "@chakra-ui/react"
 import { Outlet } from "react-router-dom"
+import Navbar from "../components/Navbar"
 
 export default function RootLayout() {
   return (
-    <>
-    <Container maxWidth="7xl">
-      <Outlet />
-    </Container>
-    </>
+    <Box overflowY="scroll" height="100vh">
+      <Navbar />
+      <Container maxWidth="7xl">
+        <Outlet />
+      </Container>
+    </Box>
   )
 }
