@@ -38,7 +38,7 @@ const TeamPage = () => {
     }, [id])
 
     return (
-        <Box>
+        <Box height={"100vh"}>
           <Heading size="2xl" textAlign="center">
             {team.prefix} {team.name}
           </Heading>
