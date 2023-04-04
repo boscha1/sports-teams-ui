@@ -50,9 +50,9 @@ const Navbar = () => {
           display={{ base: "none", md: "flex" }}
         >
           <NavLink to="teams">Teams</NavLink>
-          <NavLink to="teams">Schedule</NavLink>
-          <NavLink to="teams">Standings</NavLink>
-          <NavLink to="teams">News</NavLink>
+          <NavLink to="coaches">Coaches</NavLink>
+          <NavLink to="stadiums">Stadiums</NavLink>
+          <NavLink to="news">News</NavLink>
         </Stack>
       </Flex>
 
@@ -78,13 +78,13 @@ const Navbar = () => {
               </NavLink>
             </ListItem>
             <ListItem>
-              <NavLink to="schedule">
-                Schedule
+              <NavLink to="coaches">
+                Coaches
               </NavLink>
             </ListItem>
             <ListItem>
-              <NavLink to="standings">
-                Standings
+              <NavLink to="stadiums">
+                Stadiums
               </NavLink>
             </ListItem>
             <ListItem>

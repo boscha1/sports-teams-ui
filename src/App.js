@@ -4,6 +4,7 @@ import {
   Route, 
   RouterProvider 
 } from 'react-router-dom'
+import ComingSoon from './components/ComingSoon'
 
 // layouts and pages
 import RootLayout from './layouts/RootLayout'
@@ -18,6 +19,9 @@ const router = createBrowserRouter(
       <Route index element={<Home />}/>
       <Route path="/teams/:id" element={<TeamPage/>}/>
       <Route path="/teams/" element={<TeamsPage/>}/>
+      <Route path="/coaches/" element={<ComingSoon/>} />
+      <Route path="/stadiums/" element={<ComingSoon/>} />
+      <Route path="/news/" element={<ComingSoon/>} />
     </Route>
   )
 )
