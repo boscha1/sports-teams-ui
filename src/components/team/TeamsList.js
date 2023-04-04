@@ -6,7 +6,7 @@ import { Grid, GridItem, Image } from "@chakra-ui/react";
 const TeamsList = ({teams}) => {
     const teamsList = teams.map((team) => {
         return (
-          <GridItem key={team.id}>
+          <GridItem key={team.id} colSpan={{ base: 4, lg: 2, xl: 1 }} >
             <NavLink to={"/teams/" + team.id}>
               <Image
                 src={`/teams/${team.name.toLowerCase()}/${team.name.toLowerCase()}_logo.png`}

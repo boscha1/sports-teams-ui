@@ -6,7 +6,7 @@ export default function RootLayout() {
   return (
     <Box overflowY="scroll" height="100vh">
       <Navbar />
-      <Container maxWidth="7xl">
+      <Container maxWidth="7xl" bg={"gray.300"}>
         <Outlet />
       </Container>
     </Box>

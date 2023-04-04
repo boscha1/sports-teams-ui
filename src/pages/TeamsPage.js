@@ -15,9 +15,9 @@ const TeamsPage = () => {
     }, [])
 
     return (
-        <h1>
+        <>
             <TeamsList teams={teams}/>
-        </h1>
+        </>
     );
 };
 
