@@ -8,7 +8,7 @@ function Searchbar() {
         if (!query) {
             return []
         }
-        return teams.filter((team) => (team.prefix + team.name).includes(query))
+        return teams.filter((team) => (team.prefix + team.name).toLowerCase().includes(query))
     }
 
     const [query, setQuery] = useState("")
@@ -46,9 +46,11 @@ function Searchbar() {
                     borderRadius: "4px"
                 }}>
                     {filteredItems.map((value) => (
-                        <ListItem key={value.id} color='black' _hover={{ backgroundColor: 'gray.100', cursor: 'pointer' }}>
-                            <NavLink onClick={() => setQuery("")} to={`teams/${value.id}`}>{value.prefix} {value.name}</NavLink>
-                        </ListItem>
+                        <NavLink onClick={() => setQuery("")} to={`teams/${value.id}`}>
+                            <ListItem key={value.id} color='black' _hover={{ backgroundColor: 'gray.100', cursor: 'pointer' }}>
+                                {value.prefix} {value.name}
+                            </ListItem>
+                        </NavLink>
                     ))}
                 </List>
             )}
