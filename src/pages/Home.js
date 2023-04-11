@@ -9,7 +9,7 @@ import {
   Image,
   Badge
 } from "@chakra-ui/react";
-import CardItem from "../components/CardItem";
+import CardItem from "../components/common/CardItem";
 
 const Home = () => {
   return (

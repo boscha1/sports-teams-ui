@@ -1,6 +1,6 @@
 import { Container, Box } from "@chakra-ui/react"
 import { Outlet } from "react-router-dom"
-import Navbar from "../components/Navbar"
+import Navbar from "../components/nav/Navbar"
 
 export default function RootLayout() {
   return (

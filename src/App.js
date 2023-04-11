@@ -4,7 +4,7 @@ import {
   Route, 
   RouterProvider 
 } from 'react-router-dom'
-import ComingSoon from './components/ComingSoon'
+import ComingSoon from './components/common/ComingSoon'
 
 // layouts and pages
 import RootLayout from './layouts/RootLayout'

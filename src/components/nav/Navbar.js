@@ -10,11 +10,11 @@ import {
   Image,
   VStack,
   List,
-  ListItem,
-  ListIcon
+  ListItem
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom"
+import Searchbar from "./Searchbar";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,7 +24,7 @@ const Navbar = () => {
       <Flex
         bg="gray.800"
         color="white"
-        px={20}
+        px={10}
         py={3}
         align="center"
         justify="space-between"
@@ -43,17 +43,20 @@ const Navbar = () => {
           </Link>
         </Flex>
 
-        <Stack
-          spacing={4}
-          align="center"
-          direction="row"
-          display={{ base: "none", md: "flex" }}
-        >
-          <NavLink to="teams">Teams</NavLink>
-          <NavLink to="coaches">Coaches</NavLink>
-          <NavLink to="stadiums">Stadiums</NavLink>
-          <NavLink to="news">News</NavLink>
-        </Stack>
+        <Flex justify="space-between" align="center" w={{ base: "100%", md: "auto" }}>
+          <Searchbar />
+          <Stack
+            spacing={4}
+            align="center"
+            direction="row"
+            display={{ base: "none", md: "flex" }}
+          >
+            <NavLink to="teams">Teams</NavLink>
+            <NavLink to="coaches">Coaches</NavLink>
+            <NavLink to="stadiums">Stadiums</NavLink>
+            <NavLink to="news">News</NavLink>
+          </Stack>
+        </Flex>
       </Flex>
 
       {isOpen ? (
